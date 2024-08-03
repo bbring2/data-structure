@@ -16,8 +16,4 @@ public class SearchMap {
         this.dataGenerator = dataGenerator;
     }
 
-    public List<Integer> createMap() {
-        return dataGenerator.generateRandomList(100);
-    }
-
 }

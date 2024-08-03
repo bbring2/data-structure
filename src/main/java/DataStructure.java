@@ -1,16 +1,19 @@
-import basic.hashmap.SearchMap;
-import common.DataGenerator;
+import problems.programmers.IntervalNumber;
+import problems.programmers.TwoNumberPlus;
+
+import java.util.Arrays;
 
 /**
  * @author: Heejeong Choi
  * @description: This class is only for running codes!
  */
-public class DataStructure {
+class DataStructure {
 
     public static void main(String[] args) {
-        DataGenerator dataGenerator = new DataGenerator();
-        SearchMap searchMap = new SearchMap(dataGenerator);
-//        System.out.println(searchMap.createMap());
-        System.out.println(dataGenerator.generateRandomMap(100));
+        IntervalNumber number = new IntervalNumber();
+        TwoNumberPlus numberPlus = new TwoNumberPlus();
+
+        System.out.println((Arrays.toString(number.rateNumberDistance(-4, 3))));
     }
+
 }
