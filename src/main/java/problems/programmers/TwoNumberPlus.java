@@ -1,6 +1,6 @@
 package problems.programmers;
 
-import java.util.Arrays;
+import java.util.TreeSet;
 
 /**
  * @author: Heejeong Choi
@@ -15,14 +15,22 @@ public class TwoNumberPlus {
      * */
 
     public int[] getAllSumNumber(int[] numbers) {
-        int[] answer = {};
+        // TreeSet은 중복을 자동으로 제거하고 정렬을 유지
+        TreeSet<Integer> sumSet = new TreeSet<>();
 
-        for(int i=0; i<numbers.length-1; i++) {
-            int subSum = numbers[i] + numbers[i+1];
-            answer[i] = subSum;
+        for(int i = 0; i < numbers.length - 1; i++) {
+            for(int j = i + 1; j < numbers.length; j++) {
+                int subSum = numbers[i] + numbers[j];
+                sumSet.add(subSum);
+            }
         }
 
-        Arrays.stream(answer).distinct();
+        // TreeSet을 배열로 변환
+        int[] answer = new int[sumSet.size()];
+        int index = 0;
+        for(Integer sum : sumSet) {
+            answer[index++] = sum;
+        }
 
         return answer;
     }
